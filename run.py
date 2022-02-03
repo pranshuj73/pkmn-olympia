@@ -19,7 +19,7 @@ def menu():
     question = [
         inquirer.List(
             'menu',
-            message="What do you want to do?",
+            message = "What do you want to do?",
             choices = ['New Game', 'Load Game', 'About', 'Exit'],
         )
     ]
@@ -53,4 +53,3 @@ if __name__ == '__main__':
     clear()
 
     main()
-    
