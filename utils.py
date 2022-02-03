@@ -18,14 +18,15 @@ def wait(n):
 def typewrite(*argv):
   for arg in argv:
     if arg == '<INPUT>':
-      input("Enter any key to continue...")
-      print("\033[A                             \033[A") # move cursor up 2 lines
-    if arg == '<PAUSE>':
+      input("Press enter to continue...")
+      print(f"\033[A{' ' * 50}\033[A") # move cursor up 2 lines
+    elif arg == '<PAUSE>':
       time.sleep(0.7)
+      print()
     else:
       # each arg will be a sentence
       for char in arg:
-        time.sleep(0.05) # go to sleep for 0.05 secs
+        time.sleep(0.03) # go to sleep for 0.05 secs
         sys.stdout.write(char) # prints char on screen (somehow differently?)
         sys.stdout.flush() # flushes char from ram memory using voodoo magic
       

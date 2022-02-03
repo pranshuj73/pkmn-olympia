@@ -17,13 +17,10 @@ def initiate():
     clear()
     loader('Game is loading', 1)
     clear()
-    typewrite("Welcome to the game!")
-    wait(2)
-    clear()
     typewrite(
         "Hello and welcome to the world of Pokemon!",
         "Pokemon are wonderful creatures that live in the world and fight each other.",
-        "<PAUSE>"
+        "<PAUSE>",
         "My name is Professor Tumin. I'm a Pokemon Researcher and that is simply to say I like studying Pokemon!",
         "Ah...I forgot to ask you, what's your name?"
     )
