@@ -6,11 +6,6 @@ import os, sys, inquirer
 import initial
 
 
-def new_game():
-    print("Starting New Game...", end="\r" )
-    
-    # chapter_1()
-
 def exit():
     print("Exiting Game...")
     sys.exit(0)
@@ -36,13 +31,16 @@ def main():
     console = Console()
     console.print(
 """
+
 █▀█ █▀█ █▄▀ █▀▀ █▀▄▀█ █▀█ █▄░█
 █▀▀ █▄█ █░█ ██▄ █░▀░█ █▄█ █░▀█
 
 █▀█ █░░ █▄█ █▀▄▀█ █▀█ █ ▄▀█
 █▄█ █▄▄ ░█░ █░▀░█ █▀▀ █ █▀█
+
 """,
-    style="yellow on blue")
+    style="yellow",
+    justify="center",)
 
     # show the game menu
     menu()

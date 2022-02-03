@@ -20,10 +20,14 @@ def initiate():
     typewrite("Welcome to the game!")
     wait(2)
     clear()
-    typewrite("Hello! I am Professor Tumin! And I welcome you to the world of Pokemon.")
+    typewrite(
+        "Hello and welcome to the world of Pokemon!",
+        "Pokemon are wonderful creatures that live in the world and fight each other.",
+        "<PAUSE>"
+        "My name is Professor Tumin. I'm a Pokemon Researcher and that is simply to say I like studying Pokemon!",
+        "Ah...I forgot to ask you, what's your name?"
+    )
 
-    # Asking for name
-    typewrite("Sorry I am little old so I forget, can you tell me your name again?")
     askInfo = [
         inquirer.Text('name', message = "My name is"),
         inquirer.List(
@@ -34,4 +38,8 @@ def initiate():
     ]
     info = inquirer.prompt(askInfo)
     name, gender = info['name'], info['gender']
-    typewrite(f"Very well! So nice to meet you {name}, a {gender}!")
+    typewrite(
+        f"Very well! Pleased to make acquaintance with you you {name}, you're a wonderful {gender}!",
+        "Now then! Shall we embark on this journey together?",
+        "Let's enter the world of Pokemon, where the dreams become reality!"
+    )
