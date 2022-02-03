@@ -29,7 +29,7 @@ def initiate():
         inquirer.List(
             'gender',
             message = "And I am a",
-            choices = ['Boy', 'Michael Scott', 'Apache Helikopter', 'Dishwasher']
+            choices = ['Boy', 'Girl']
         )
     ]
     info = inquirer.prompt(askInfo)
