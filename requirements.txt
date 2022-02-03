@@ -1,8 +1,11 @@
+blessed==1.19.1
 colorama==0.4.4
 commonmark==0.9.1
+inquirer==2.9.1
 prompt-toolkit==1.0.14
 Pygments==2.11.2
-PyInquirer==1.0.3
+python-editor==1.0.4
+readchar==3.0.5
 regex==2022.1.18
 rich==11.1.0
 six==1.16.0
