@@ -5,7 +5,7 @@ import sys
 import inquirer
 
 def new_game():
-    print("Starting New Game...", end="\r")
+    print("Starting New Game...", end="\r" )
     
     # chapter_1()
 
