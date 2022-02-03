@@ -36,7 +36,8 @@ def initiate():
     info = inquirer.prompt(askInfo)
     name, gender = info['name'], info['gender']
     typewrite(
-        f"Very well! Pleased to make acquaintance with you you {name}, you're a wonderful {gender}!",
+        f"Very well! Pleased to make acquaintance with you you {name}, you're a wonderful {gender.lower()}!",
         "Now then! Shall we embark on this journey together?",
-        "Let's enter the world of Pokemon, where the dreams become reality!"
+        "Let's enter the world of Pokemon, where the dreams become reality!",
+        "<INPUT>"
     )
