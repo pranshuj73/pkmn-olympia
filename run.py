@@ -1,8 +1,10 @@
 # contains main code
 
 from utils import *
-import sys
-import inquirer
+from rich.console import Console
+import os, sys, inquirer
+import initial
+
 
 def new_game():
     print("Starting New Game...", end="\r" )
@@ -26,23 +28,29 @@ def menu():
     if answer['menu'] == 'Exit':
         exit()
     elif answer['menu'] == 'New Game':
-        new_game()
+        initial.initiate()
+        # new_game()
 
 def main():
     # printing the game title
-    print(
+    console = Console()
+    console.print(
 """
 █▀█ █▀█ █▄▀ █▀▀ █▀▄▀█ █▀█ █▄░█
 █▀▀ █▄█ █░█ ██▄ █░▀░█ █▄█ █░▀█
 
 █▀█ █░░ █▄█ █▀▄▀█ █▀█ █ ▄▀█
 █▄█ █▄▄ ░█░ █░▀░█ █▀▀ █ █▀█
-"""
-    )
+""",
+    style="yellow on blue")
 
     # show the game menu
     menu()
 
 
 if __name__ == '__main__':
+    # initialising run.py
+    clear()
+
     main()
+    
