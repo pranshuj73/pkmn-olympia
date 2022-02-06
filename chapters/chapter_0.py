@@ -1,6 +1,3 @@
-from email import message
-from random import choices
-from typing import TYPE_CHECKING
 from utils import *
 from rich.console import Console
 import sys, os, time, inquirer
@@ -10,12 +7,9 @@ if not os.path.exists('./saves'):
     os.makedirs('./saves')
 
 
-
-
-def initiate():
+def main():
     console = Console()
-    clear()
-    loader('Game is loading', 1)
+    loader('Game is loading', 0.3)
     clear()
     typewrite(
         "Hello and welcome to the world of Pokemon!",
@@ -25,16 +19,26 @@ def initiate():
         "Ah...I forgot to ask you, what's your name?"
     )
 
-    askInfo = [
-        inquirer.Text('name', message = "My name is"),
+    askName = [
+        inquirer.List(
+            'name',
+            message = "My name is",
+            choices = ['New Name', 'Jayden','Ash', 'Red',]
+        ),
+    ]
+    name = inquirer.prompt(askName)['name']
+    if name == "New Name":
+        name = input("Please enter your name: ")
+    
+    askGender = [
         inquirer.List(
             'gender',
             message = "And I am a",
             choices = ['Boy', 'Girl']
         )
     ]
-    info = inquirer.prompt(askInfo)
-    name, gender = info['name'], info['gender']
+    gender = inquirer.prompt(askGender)['gender']
+    save_game(1, name)
     typewrite(
         f"Very well! Pleased to make acquaintance with you you {name}, you're a wonderful {gender.lower()}!",
         "Now then! Shall we embark on this journey together?",

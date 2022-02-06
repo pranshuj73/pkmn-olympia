@@ -3,7 +3,6 @@
 from utils import *
 from rich.console import Console
 import os, sys, inquirer
-import initial
 
 
 def exit():
@@ -15,16 +14,19 @@ def menu():
         inquirer.List(
             'menu',
             message = "What do you want to do?",
-            choices = ['New Game', 'Load Game', 'About', 'Exit'],
+            choices = ['Load Game', 'New Game', 'About', 'Exit'],
         )
     ]
     answer = inquirer.prompt(question)
 
     if answer['menu'] == 'Exit':
         exit()
+    elif answer['menu'] == 'Load Game':
+        load_game()
     elif answer['menu'] == 'New Game':
-        initial.initiate()
-        # new_game()
+        save_game(0, '')
+        load_game()
+        
 
 def main():
     # printing the game title
