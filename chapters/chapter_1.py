@@ -8,3 +8,4 @@ def main():
     typewrite(
         "Hello and welcome to the world of Pokemon!"
     )
+

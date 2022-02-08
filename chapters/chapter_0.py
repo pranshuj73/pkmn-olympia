@@ -45,4 +45,3 @@ def main():
         "Let's enter the world of Pokemon, where the dreams become reality!",
         "<INPUT>"
     )
-    clear()
