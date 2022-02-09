@@ -6,6 +6,6 @@ def main():
     console = Console()
     console.rule("Chapter 1: New Beginnings")
     typewrite(
-        "Hello and welcome to the world of Pokemon!"
+        ""
     )
 

@@ -59,6 +59,10 @@ def read_savefile():
         elif choice == 'Create new savefile':
             contents = f'{{\n\t"chapter": 0,\n\t"name": ""\n}}'
         
+        # check if saves directory exists, if not create it
+        if not os.path.exists('./saves'):
+            os.makedirs('./saves')
+
         # save the contents of savefile into saves/save.json
         with open('./saves/save.json', 'w+') as f:
             f.write(contents)
@@ -76,6 +80,10 @@ def save_game(chapter, name):
     # save the game
     # chapter: chapter number
     # name: player name
+
+    # check if saves directory exists, if not create it
+    if not os.path.exists('./saves'):
+        os.makedirs('./saves')
     
     # save the chapter and player name to json file in the saves directory
     with open(f'./saves/save.json', 'w+') as f:

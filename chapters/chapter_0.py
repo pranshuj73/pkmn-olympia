@@ -2,10 +2,6 @@ from utils import *
 from rich.console import Console
 import sys, os, time, inquirer
 
-# initialising
-if not os.path.exists('./saves'):
-    os.makedirs('./saves')
-
 
 def main():
     console = Console()
