@@ -5,10 +5,10 @@ import os, time, sys, importlib, inquirer
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def loader(message, n):
-    for i in range(4):
+def loader(message="", sleep_time=0.5, dots=3):
+    for i in range(dots + 1):
         print(f"\r{message}{'.' * i}", end="\r")
-        time.sleep(n)
+        time.sleep(sleep_time)
     print()
 
 def wait(n):
@@ -19,13 +19,15 @@ def typewrite(*argv):
     if arg == '<INPUT>':  # wait for user to press ENTER
       input("Press enter to continue...")
       print(f"\033[A{' ' * 50}\033[A") # move cursor up 2 lines
-    elif arg == '<PAUSE>':  # pause the game for 0.7 
+    elif arg == '<WAIT>':  # pause the game for 0.7 
       time.sleep(0.7)
       print()
+    elif arg == '<PAUSE>':
+        loader(sleep_time=0.7, dots=5)
     else:
       # each arg will be a sentence
       for char in arg:
-        time.sleep(0.03) # go to sleep for 0.03 secs
+        time.sleep(0.04) # go to sleep for 0.03 secs
         sys.stdout.write(char) # prints char on screen (somehow differently?)
         sys.stdout.flush() # flushes char from ram memory using voodoo magic
       
@@ -101,7 +103,9 @@ def load_game():
             main()
 
             next_chapter = int(chapter) + 1
-            save_game(next_chapter, name)
+            # save_game(next_chapter, name)
+
+            time.sleep(1)
 
             clear()
             typewrite("Progress saved successfully!", "<INPUT>")
@@ -120,7 +124,7 @@ def load_game():
             clear()
             typewrite(
                 f"Oh no! There was an error loading the game. Please try again later.",
-                "<PAUSE>"
+                "<WAIT>"
             )
             break
 

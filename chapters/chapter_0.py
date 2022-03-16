@@ -10,7 +10,7 @@ def main():
     typewrite(
         "Hello and welcome to the world of Pokemon!",
         "Pokemon are wonderful creatures that live in the world and fight each other.",
-        "<PAUSE>",
+        "<WAIT>",
         "My name is Professor Tumin. I'm a Pokemon Researcher and that is simply to say I like studying Pokemon!",
         "Ah...I forgot to ask you, what's your name?"
     )
